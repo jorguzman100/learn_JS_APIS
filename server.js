@@ -14,20 +14,28 @@ const __dirname = path.dirname(__filename);
 // Detect the API
 import 'dotenv/config';
 const API = {
-    SCRAP: process.argv.includes('--scrap')
+    SCRAPPER: process.argv.includes('--scrapper')
 }
 console.log(`[SERVER] API: ${API}`);
 
 // Static assets
-app.use('/shared', express.static(
-    path.join(__dirname, './client/shared')));
+app.use(express.static(path.join(__dirname, 'client')));
 
-// Routes
+// Page routes
 const router = express.Router();
-router.get('/scrap', (req, res) => {
-    console.log(`[SERVER] Requested url: ${req.url}`);
-    res.sendFile(__dirname, './client/scrap/index.html');
+app.use('/', router); // mount the router / register the routes
+
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/root.html'));
 });
+
+router.get('/scrapper', (req, res) => {
+    console.log(`[SERVER] Requested url: ${req.url}`);
+    res.sendFile(path.join(__dirname, 'client/scrapper/index.html'));
+});
+
+// API routes (JSON, logic)
+app.get('/api/scrape', () => {});
 
 // Global error handler
 app.use((err, req, res, next) => {
