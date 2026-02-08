@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-bg="3" data-theme="2">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Scrapper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/shared/css/style.css" />
+    <link rel="stylesheet" href="/shared/css/auth.css" />
+    <link rel="stylesheet" href="/employees/front-desk/index.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏎️</text></svg>">
+</head>
+
+<body>
+    <main class="app" data-chat-user="receptionist">
+
+        <!-- HEADER -->
+        <header class="header header-wide">
+            <div>
+                <h1>Web Scrapper</h1>
+                <p class="subtitle subtle">Subtitle</p>
+            </div>
+
+            <span class="subtle">Subtle</span>
+        </header>
+
+        <!-- RESULTS-->
+        <section class="panel panel-wide">
+            <div class="panel-header">
+                <h2>Results</h2>
+            </div>
+
+            <table class="fd-upcoming-table">
+                <thead>
+                    <tr>
+                        <th>Col 1</th>
+                        <th>Col 2</th>
+                        <th>Col n</th>
+                    </tr>
+                </thead>
+                <tbody class="js-TBD"></tbody>
+            </table>
+
+        </section>
+
+
+    </main>
+
+    
+    <script type="module" src="/scrap/index.js" defer></script>
+    <!-- <script src="/config/features.js"></script> -->
+
+</body>
+
+</html>
